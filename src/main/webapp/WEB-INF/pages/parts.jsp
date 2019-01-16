@@ -56,7 +56,6 @@
 <br/>
 
 <h1>Каталог частей для компьютеров</h1>
-
 <c:if test="${!empty listParts}">
     <table class="tg">
         <tr>
@@ -86,29 +85,25 @@
     <c:if test="${listParts.size() < listAll.size()}">
         <table>
             <tr>
-                <td><a href="<c:url value='/previous'/>"><<Предыдущие<<  </a></td>
+                <td><a href="<c:url value='/previous'/>"><<Предыдущие<< </a></td>
+                <td width="120"> </td>
                 <td><a href="<c:url value='/next'/>">  >>Следующие>></a></td>
-
             </tr>
         </table>
     </c:if>
 
     <table class = "tg">
         <tr>
-            <td>Можно собрать</td>
-            <td>${countComputers}</td>
-            <td>Компьютеров</td>
-            <td>После проведения операций с базой данных происходит переход в основной каталог!</td>
+            <td width="150">Можно собрать</td>
+            <td width="120">${countComputers}</td>
+            <td width="120">Компьютеров</td>
 
         </tr>
     </table>
-
-
-
+    <td>После проведения операций с базой данных происходит переход в основной каталог!</td>
 </c:if>
 
 <h1>Выборка детали по значению</h1>
-
 <table>
     <tr>
         <td><a href="<c:url value='/parts/selectNeeded'/>">Отобразить только необходимые</a></td>
@@ -119,7 +114,6 @@
 <h1>Добавить новую деталь в каталог</h1>
 
 <c:url var="addAction" value="/parts/add"/>
-
 <form:form action="${addAction}" commandName="part">
     <table>
         <c:if test="${!empty part.name}">
@@ -167,14 +161,8 @@
         </tr>
         <tr>
             <td colspan="2">
-                <c:if test="${!empty part.name}">
-                    <input type="submit"
-                           value="<spring:message text="Edit Part"/>"/>
-                </c:if>
-                <c:if test="${empty part.name}">
-                    <input type="submit"
-                           value="<spring:message text="Добавить деталь"/>"/>
-                </c:if>
+
+                    <input type="submit" value="<spring:message text="Добавить деталь"/>"/>
             </td>
         </tr>
     </table>

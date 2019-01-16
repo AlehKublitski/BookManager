@@ -1,7 +1,7 @@
-package net.proselyte.bookmanager.service;
+package net.proselyte.partmanager.service;
 
-import net.proselyte.bookmanager.dao.PartDao;
-import net.proselyte.bookmanager.model.Part;
+import net.proselyte.partmanager.dao.PartDao;
+import net.proselyte.partmanager.model.Part;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,28 +23,28 @@ public class PartServiceImpl implements PartService {
     @Override
     @Transactional
     public void addPart(Part part) {
-        this.partDao.addBook(part);
+        this.partDao.addPart(part);
         from = 0;
     }
 
     @Override
     @Transactional
     public void updatePart(Part part) {
-        this.partDao.updateBook(part);
+        this.partDao.updatePart(part);
         from = 0;
     }
 
     @Override
     @Transactional
     public void removeBook(int id) {
-        this.partDao.removeBook(id);
+        this.partDao.removePart(id);
         from = 0;
     }
 
     @Override
     @Transactional
     public Part getPartById(int id) {
-        return this.partDao.getBookById(id);
+        return this.partDao.getPartById(id);
     }
 
     @Override

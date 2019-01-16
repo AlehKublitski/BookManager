@@ -16,7 +16,7 @@
         http://www.springframework.org/schema/jdbc/spring-jdbc.xsd ">
 
 
-    <context:component-scan base-package="net.proselyte.bookmanager"/>
+    <context:component-scan base-package="net.proselyte.partmanager"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -45,7 +45,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>net.proselyte.bookmanager.model.Part</value>
+                <value>net.proselyte.partmanager.model.Part</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -58,15 +58,15 @@
     </bean>
 
     <!--PartDao and PartService beans-->
-    <bean id="partDao" class="net.proselyte.bookmanager.dao.PartDaoImpl">
+    <bean id="partDao" class="net.proselyte.partmanager.dao.PartDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="partService" class="net.proselyte.bookmanager.service.PartServiceImpl">
+    <bean id="partService" class="net.proselyte.partmanager.service.PartServiceImpl">
         <property name="partDao" ref="partDao"/>
     </bean>
 
-    <context:component-scan base-package="net.proselyte.bookmanager"/>
+    <context:component-scan base-package="net.proselyte.partmanager"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

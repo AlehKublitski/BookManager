@@ -1,4 +1,4 @@
-package net.proselyte.bookmanager.model;
+package net.proselyte.partmanager.model;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package net.proselyte.bookmanager.service;
+package net.proselyte.partmanager.service;
 
-import net.proselyte.bookmanager.model.Part;
+import net.proselyte.partmanager.model.Part;
 
 import java.util.List;
 

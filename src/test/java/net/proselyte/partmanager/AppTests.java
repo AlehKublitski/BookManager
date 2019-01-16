@@ -1,4 +1,4 @@
-package net.proselyte.bookmanager;
+package net.proselyte.partmanager;
 
 import org.junit.Before;
 import org.junit.Test;

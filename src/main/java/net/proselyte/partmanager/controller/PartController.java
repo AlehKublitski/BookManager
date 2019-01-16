@@ -1,7 +1,7 @@
-package net.proselyte.bookmanager.controller;
+package net.proselyte.partmanager.controller;
 
-import net.proselyte.bookmanager.model.Part;
-import net.proselyte.bookmanager.service.PartService;
+import net.proselyte.partmanager.model.Part;
+import net.proselyte.partmanager.service.PartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -71,10 +71,11 @@ public class PartController {
     @RequestMapping("decrement/{id}")
     public String decrementPart(@PathVariable("id") int id){
         Part part = this.partService.getPartById(id);
-        part.setNumber(part.getNumber() - 1);
-        this.partService.updatePart(part);
+        if((part.getNumber() - 1) >= 0) {
+            part.setNumber(part.getNumber() - 1);
+            this.partService.updatePart(part);
+        }
         return "redirect:/redirect";
-
     }
 
     @RequestMapping("increment/{id}")
