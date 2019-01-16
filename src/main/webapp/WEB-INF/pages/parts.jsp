@@ -142,7 +142,7 @@
         <tr>
             <td>
                 <form:label path="needed">
-                    <spring:message text="Необходимость Да/Нет"/>
+                    <spring:message text="Необходимость 1-Да/0-Нет"/>
                 </form:label>
             </td>
             <td>

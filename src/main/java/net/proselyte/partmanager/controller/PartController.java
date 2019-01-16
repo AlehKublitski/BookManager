@@ -61,13 +61,6 @@ public class PartController {
         return "redirect:/redirect";
     }
 
-   // @RequestMapping("edit/{id}")
-    //public String editBook(@PathVariable("id") int id, Model model){
-    //    model.addAttribute("part", this.partService.getPartById(id));
-    //    model.addAttribute("listBooks", this.partService.listParts());
-    //    return "parts";
-    //}
-
     @RequestMapping("decrement/{id}")
     public String decrementPart(@PathVariable("id") int id){
         Part part = this.partService.getPartById(id);
@@ -97,28 +90,6 @@ public class PartController {
         return "redirect:/parts";
     }
 
-   // @RequestMapping("next/needed")
-    //public String nextNeededList() {
-     //   return "redirect:/parts/selectNeeded";
-    //}
-
-    //@RequestMapping("previous/needed")
-    //public String previousNeededList() {
-   //     this.partService.listPrevious();
-   //     return "redirect:/parts/selectNeeded";
-   // }
-
-    //@RequestMapping("next/noneeded")
-   // public String nextNoNeededList() {
-   //     return "redirect:/parts/selectNoNeeded";
-    //}
-
-   // @RequestMapping("previous/noneeded")
-   // public String previousNoNeededList() {
-    //    this.partService.listPrevious();
-    //    return "redirect:/parts/selectNoNeeded";
-    //}
-
     @RequestMapping(value = "/parts/selectNeeded", method = RequestMethod.GET)
     public String selectNeeded(Model model) {
         this.partService.selectNeeded();
@@ -127,10 +98,6 @@ public class PartController {
     @RequestMapping(value = "/parts/selectNoNeeded", method = RequestMethod.GET)
     public String selectNoNeeded(Model model) {
         this.partService.selectNoNeeded();
-        //model.addAttribute("allNoNeeded", this.partService.selectNoNeeded());
-        //model.addAttribute("part", new Part());
-       // model.addAttribute("listParts", this.partService.listParts());
-        //return "selectNoNeeded";
         return "redirect:/parts";
     }
 
