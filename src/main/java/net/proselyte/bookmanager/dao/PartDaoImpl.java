@@ -23,7 +23,7 @@ public class PartDaoImpl implements PartDao {
     public void addBook(Part part) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(part);
-        System.out.println(part.getName() + "добавлено удачно");
+        System.out.println(part.getName() + "добавлено удачно да");
         logger.info("Part successfully saved. Part details: " + part);
     }
 
